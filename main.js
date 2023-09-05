@@ -162,4 +162,34 @@ function scopeTest() {
   console.log(globalVar); // Access globalVar from global scope
   // console.log(blockVar);  // This line will produce an error
   // console.log(functionVar);  // This line will produce an error
+
+
+
+
+  ///4.1B Implement a function named hoistingTest that:
   
+   
+  function hoistingTest(){
+    console.log(myVariable);                            
+   var myVariable= "I am a var variable";     //undefined originally
+    console.log(myVariable);
+  }
+  hoistingTest();                                        //I am a var variable
+
+  //trying the above with let and const 
+  //let      Cannot access myVariable before initialization--not hoisted
+  //const    SAME----not hoisted
+
+
+
+  hoistedFunction(); // Hoisted
+  function hoistedFunction() {
+    console.log("I'm a hoisted function");
+
+    function notHoistedFunction() {
+        console.log("I'm not hoisted");
+      }
+      notHoistedFunction();
+    }
+    
+    hoistingTest();
