@@ -192,4 +192,17 @@ function scopeTest() {
       notHoistedFunction();
     }
     
-    hoistingTest();
+    hoistingTest();   ///nothing happens within this on console log? 
+
+    //Design a function named hoistChallenge that combines the aspects of scope and hoisting in a slightly complex manner. -==
+    // For instance, declare a function inside a block and see if it's accessible outside the block, 
+    //or use a variable before it's declared inside a function to check hoisting intricacies.
+    hoistChallenge();
+    let oneVariable= "I am global!";
+    function hoistChallenge(){
+        let secondVariable= 45;
+            console.log(oneVariable +" " + secondVariable);
+        }
+    ;
+    hoistChallenge();  //I am global! 45 
+    console.log(secondVariable)  //second variable is not defined because it is declared inside the function
